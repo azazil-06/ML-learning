@@ -1,3 +1,8 @@
+#pip install -r \MLprograms\requirements.txt
+#tensorflow
+
+
+#-----------------------------:)----------------------------------#
 
 #Linear regression
 
@@ -29,7 +34,7 @@ print(mydata)
 print("Coefficient", model.coef_[0])
 print("Intercept", model.intercept_[0])
 
-
+#----- !!!
 #Encoding string data
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
@@ -43,7 +48,7 @@ y = mydata[["salary"]]
 #-------------------------------------------------------------------------------------------------------
 
 
-#Neighbors regressor
+# Neighbors regressor (knn)
 
 import pandas as pd
 import sklearn.neighbors as knn
@@ -63,7 +68,7 @@ plot.show()
 model = knn.KNeighborsRegressor(n_neighbors=3)
 model.fit(x,y)                 
 
-print(model.predict([[160]])) 
+print(model.predict([[160]]))            # y ann ivide prdct akunne
 
 
 #--------------------------------------------------------------------------------------------------
@@ -72,19 +77,21 @@ print(model.predict([[160]]))
 dataset = pd.read_csv("weight_predict_real.csv")
 
 x=dataset[["height","age","bmi","muscle_mass","body_fat"]]     #except value to be predicted  
-y=dataset[["weight"]] 
+y=dataset[["weight"]] # value to be predicted
 
 
 model=lm.LinearRegression()
 model.fit(x,y)  
 
-print(model.predict([[160,20,80,10,9]])) #weight ozhich values ellam pass cheyyy
+print(model.predict([[160,20,80,10,9]])) #weight ozhich values ellam pass cheyyy , nt:- as same in x datast above
 
 
 #----------------------------------------------------------------
 
-#to read & pass values
-# getHeight = int(input("Enter height:"))
+#to read & pass values ,,  input edukkan
+
+
+g = int(input("Enter height:"))
 getAge = int(input("Enter age:"))
 getBMI = int(input("Enter BMI:"))
 getMuscleMass = int(input("Enter musclemass:"))
@@ -93,3 +100,15 @@ getbodyfat = int(input("Enter bodyfat %:"))
 print(model.predict([[getHeight,getAge,getBMI,getMuscleMass,getbodyfat]]))
 
 #----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+#                     :)hi
