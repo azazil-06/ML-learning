@@ -2,6 +2,10 @@
 #tensorflow
 
 
+#--IMP---
+#!  weight.py in Weight-predictor uses encoding in input
+
+
 #-----------------------------:)----------------------------------#
 
 #Linear regression
@@ -42,6 +46,9 @@ mydata["education_qualification_encoded"] = le.fit_transform(mydata[["education_
 
 x = mydata[["education_qualification_encoded"]]
 y = mydata[["salary"]]
+
+#   oru single variable encode akkan DO LIKE THIS
+m=le.fit_transform(["Male"])[0]  #smtg passing 0th index of this array only
 
 
 
