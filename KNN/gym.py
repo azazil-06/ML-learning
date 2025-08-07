@@ -13,7 +13,7 @@ plot.scatter(x,y)
 plot.show()
 
 
-model = knn.KNeighborsRegressor(n_neighbors=3)
+model = knn.KNeighborsRegressor(n_neighbors=5)
 model.fit(x,y)                 
 
 print(model.predict([[4.5]])) 
