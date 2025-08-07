@@ -64,3 +64,18 @@ model = knn.KNeighborsRegressor(n_neighbors=3)
 model.fit(x,y)                 
 
 print(model.predict([[160]])) 
+
+
+#--------------------------------------------------------------------------------------------------
+#multiple values varuannel How?
+
+dataset = pd.read_csv("weight_predict_real.csv")
+
+x=dataset[["height","age","bmi","muscle_mass","body_fat"]]     #except value to be predicted  
+y=dataset[["weight"]] 
+
+
+model=lm.LinearRegression()
+model.fit(x,y)  
+
+print(model.predict([[160,20,80,10,9]])) #weight ozhich values ellam pass cheyyy
