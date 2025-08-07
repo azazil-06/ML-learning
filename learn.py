@@ -30,6 +30,13 @@ print("Coefficient", model.coef_[0])
 print("Intercept", model.intercept_[0])
 
 
+#Encoding string data
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+mydata["education_qualification_encoded"] = le.fit_transform(mydata[["education_qualification"]]) #x inte string value encoded into number
+
+x = mydata[["education_qualification_encoded"]]
+y = mydata[["salary"]]
 
 
 
