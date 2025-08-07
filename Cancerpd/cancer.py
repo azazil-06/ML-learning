@@ -15,7 +15,7 @@ dataset["dignosis_encoded"] = le.fit_transform(dataset[["diagnosis"]])
 
 
 #----------------------------
-g0 = float(input("Enter ID: "))
+
 g1 = float(input("Enter Radius mean: "))
 g2 = float(input("Enter Texture mean: "))
 g3 = float(input("Enter Perimeter mean: "))
@@ -49,7 +49,7 @@ g30 = float(input("Enter Fractal dimension worst: "))
 
 
 
-x=dataset[["id","radius_mean","texture_mean","perimeter_mean","area_mean","smoothness_mean","compactness_mean","concavity_mean","concave_points_mean","symmetry_mean","fractal_dimension_mean","radius_se","texture_se","perimeter_se","area_se","smoothness_se","compactness_se","concavity_se","concave_points_se","symmetry_se","fractal_dimension_se","radius_worst","texture_worst","perimeter_worst","area_worst","smoothness_worst","compactness_worst","concavity_worst","concave_points_worst","symmetry_worst","fractal_dimension_worst"]]   
+x=dataset[["radius_mean","texture_mean","perimeter_mean","area_mean","smoothness_mean","compactness_mean","concavity_mean","concave_points_mean","symmetry_mean","fractal_dimension_mean","radius_se","texture_se","perimeter_se","area_se","smoothness_se","compactness_se","concavity_se","concave_points_se","symmetry_se","fractal_dimension_se","radius_worst","texture_worst","perimeter_worst","area_worst","smoothness_worst","compactness_worst","concavity_worst","concave_points_worst","symmetry_worst","fractal_dimension_worst"]]   
    
 y=dataset["dignosis_encoded"] 
 
@@ -63,7 +63,7 @@ model.fit(x,y)
 
 
 
-print(model.predict([[g0,g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12,g13,g14,g15,g16,g17,g18,g19,g20,g21,g22,g23,g24,g25,g26,g27,g28,g29,g30]]))
+print(model.predict([[g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12,g13,g14,g15,g16,g17,g18,g19,g20,g21,g22,g23,g24,g25,g26,g27,g28,g29,g30]]))
 
 if (y > 1).any():
     print("This person has cancer")

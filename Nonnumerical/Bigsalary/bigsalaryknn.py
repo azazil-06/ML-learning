@@ -14,6 +14,6 @@ y = mydata[["salary"]]
 model = knn.KNeighborsRegressor(n_neighbors=3)
 model.fit(x,y)                 
 
-print(model.predict([[160]])) 
+print(model.predict([[2]])) 
 
 print(mydata)

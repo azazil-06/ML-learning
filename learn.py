@@ -79,3 +79,17 @@ model=lm.LinearRegression()
 model.fit(x,y)  
 
 print(model.predict([[160,20,80,10,9]])) #weight ozhich values ellam pass cheyyy
+
+
+#----------------------------------------------------------------
+
+#to read & pass values
+# getHeight = int(input("Enter height:"))
+getAge = int(input("Enter age:"))
+getBMI = int(input("Enter BMI:"))
+getMuscleMass = int(input("Enter musclemass:"))
+getbodyfat = int(input("Enter bodyfat %:")) 
+
+print(model.predict([[getHeight,getAge,getBMI,getMuscleMass,getbodyfat]]))
+
+#----------------------------------------------------------------------------------------
