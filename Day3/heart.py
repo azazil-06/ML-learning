@@ -2,6 +2,8 @@ import pandas as pd
 import sklearn.neighbors as knn
 from sklearn.model_selection import train_test_split
 
+from sklearn.metrics import accuracy_score
+
 
 
 dataset=pd.read_csv("heart.csv")
@@ -13,8 +15,11 @@ x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
 
 
 
-model = knn.KNeighborsRegressor(n_neighbors=5)
-model.fit(x_train,y_train)   
+
+model = knn.KNeighborsClassifier(n_neighbors=2)
+model.fit(x_train,y_train)  
+
+
 
 #----------------------------------
 """a1 = int(input("Enter Age:"))
@@ -36,12 +41,19 @@ a13 = int(input("Enter thal:"))"""
 #eg value
 #52,1,0,125,212,0,1,168,0,1,2,2,3
 #a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13
-aj=model.predict([[52,1,0,125,212,0,1,168,0,1,2,2,3]])
+y_pred = model.predict(x_test)
 print(dataset)
-print(aj)
+print(y_pred)
 
 
-if (aj > 0.5).any():
+
+
+print("Accuracy sccore =", accuracy_score(y_test,y_pred))
+
+
+
+
+if (y_pred > 0.5).any():
     print("This person has heart disease :(")
 
 else:
