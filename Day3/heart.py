@@ -35,4 +35,12 @@ a13 = int(input("Enter thal:"))
 #eg value
 #52,1,0,125,212,0,1,168,0,1,2,2,3
 #a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13
-print(model.predict([[a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13]]))
+aj=model.predict([[a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13]])
+print(aj)
+
+
+if (aj > 0.5).any():
+    print("This person has heart disease :(")
+
+else:
+     print("This person does not have heart disease :)")
