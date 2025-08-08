@@ -23,9 +23,9 @@ y=dataset["Weight"]
 
 model=lm.LinearRegression()
 model.fit(x,y) 
-
+#----------------------
 m=le.fit_transform(["Male"])[0]
 n=le.fit_transform(["Heavy"])[0]
-
+#----------------------
 
 print(model.predict([[48,m,n,180]]))
