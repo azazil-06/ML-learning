@@ -44,9 +44,9 @@ print(y)
 print(mydata)
 
 
-if y == 0:
+if (y > -1) and (y < 1):
     print("This flower is Iris-setosa")
-elif y == 1:
+elif (y > 1) and (y < 2):
     print("This flower is Iris-versicolor")
 else:
     print("This flower is Iris-virginica")
