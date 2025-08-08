@@ -34,7 +34,19 @@ y_pred = model.predict(x_test)
 print("mse= ", mean_squared_error(y_test,y_pred))
 print("rmse= ",math.sqrt(mean_squared_error(y_test,y_pred)))
 print("r2 score= ",r2_score(y_test,y_pred))
-"""
+
 print("coefficient:",model.coef_[0])
 print("intercept:",model.intercept_[0])
-print(model.predict([[160]]))"""
+
+y= model.predict([[1,5.1,3.5,1.4,0.2]])
+print(y)
+
+print(mydata)
+
+
+if y == 0:
+    print("This flower is Iris-setosa")
+elif y == 1:
+    print("This flower is Iris-versicolor")
+else:
+    print("This flower is Iris-virginica")
