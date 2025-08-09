@@ -108,6 +108,78 @@ print(model.predict([[getHeight,getAge,getBMI,getMuscleMass,getbodyfat]]))
 
 #----------------------------------------------------------------------------------------
 
+#Accuracy check KNN
+
+
+from sklearn.metrics import accuracy_score
+
+
+
+
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
+
+model = knn.KNeighborsClassifier(n_neighbors=2)
+model.fit(x_train,y_train)
+y_pred = model.predict(x_test)
+print("Accuracy sccore =", accuracy_score(y_test,y_pred))
+
+#------------------------------------------------
+#Accuracy check linear
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score,mean_squared_error
+import math 
+
+
+x_train,x_test,y_train,y_test= train_test_split(x,y,test_size=0.2)
+
+
+pt.scatter(x_train,y_train)
+pt.show()
+model = lm.LinearRegression()
+model.fit(x_train,y_train)
+y_pred = model.predict(x_test)
+print("mse= ", mean_squared_error(y_test,y_pred))
+print("rmse= ",math.sqrt(mean_squared_error(y_test,y_pred)))
+print("r2 score= ",r2_score(y_test,y_pred))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #model creation (pickle file)
 
