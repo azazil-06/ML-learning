@@ -7,7 +7,7 @@
 
 
 #-----------------------------:)----------------------------------#
-
+"""                              DAY 01                                                      """
 #Linear regression
 
 import pandas as pd #alias pd ,pandas to read dataset
@@ -53,7 +53,7 @@ m=le.fit_transform(["Male"])[0]  #smtg passing 0th index of this array only
 
 
 #-------------------------------------------------------------------------------------------------------
-
+"""                                     DAY 02 :)                                                           """
 
 # Neighbors regressor (knn)
 
@@ -107,7 +107,20 @@ getbodyfat = int(input("Enter bodyfat %:"))
 print(model.predict([[getHeight,getAge,getBMI,getMuscleMass,getbodyfat]]))
 
 #----------------------------------------------------------------------------------------
+"""                                  DAY 03                                                    """
 
+"""
+Accuracy edukan dataset split aknm
+
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
+
+above line ath cheyyum in 80:20 rto
+
+model.fit(x_train,y_train)
+pass cheyunne splitted values only
+
+"""
 #Accuracy check KNN
 
 from sklearn.model_selection import train_test_split
