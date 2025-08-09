@@ -106,6 +106,11 @@ getbodyfat = int(input("Enter bodyfat %:"))
 
 print(model.predict([[getHeight,getAge,getBMI,getMuscleMass,getbodyfat]]))
 
+
+#to encode input
+m=le.fit_transform(["Male"])[0]
+n=le.fit_transform(["Heavy"])[0]
+
 #----------------------------------------------------------------------------------------
 """                                  DAY 03                                                    """
 
@@ -160,47 +165,26 @@ print("r2 score= ",r2_score(y_test,y_pred))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #model creation (pickle file)
 
 import joblib
 joblib.dump(model,"titanic_model.pkl")
 
+#model import
 
+import joblib
+model = joblib.load("diamonds_model.pkl")
+from sklearn.preprocessing import LabelEncoder
+
+
+
+y= model.predict([[0.23,61.5,55,3.95,3.98,2.43]])
+
+
+
+
+
+print(y)
 
 
 
