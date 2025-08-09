@@ -110,10 +110,10 @@ print(model.predict([[getHeight,getAge,getBMI,getMuscleMass,getbodyfat]]))
 
 #Accuracy check KNN
 
+from sklearn.model_selection import train_test_split
 
 from sklearn.metrics import accuracy_score
-
-
+import sklearn.neighbors as knn
 
 
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
@@ -125,6 +125,7 @@ print("Accuracy sccore =", accuracy_score(y_test,y_pred))
 
 #------------------------------------------------
 #Accuracy check linear
+
 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score,mean_squared_error
