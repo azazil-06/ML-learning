@@ -109,6 +109,11 @@ print(model.predict([[getHeight,getAge,getBMI,getMuscleMass,getbodyfat]]))
 #----------------------------------------------------------------------------------------
 
 
+#model creation (pickle file)
+
+import joblib
+joblib.dump(model,"titanic_model.pkl")
+
 
 
 
