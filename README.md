@@ -8,7 +8,9 @@
 - **Nonnumerical** — String-in-dataset encoding, etc.
 - **Weight** — Takes input from user (app-like).
 - **TrainPredict** — Creating/Importing models.
+- **Cancerpd** — Cancer predictor model.
 - **requirements.txt** — Required imports.
+
 
 ---
 ---
