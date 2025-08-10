@@ -17,6 +17,9 @@
 
 ## Tasks
 
+### Day 1
+- `Linear & KNN` folder
+
 ### Day 2
 - `Weight-predictor` folder
 
