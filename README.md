@@ -2,7 +2,7 @@
 
 ## Files
 
-- ***Learn.py*** — Everything explained (module).
+-- ***Learn.py*** — Everything explained (module).
 - **KNN** — Day 2: K Nearest Neighbour questions.
 - **Linear** — Day 1: Linear models.
 - **Nonnumerical** — String-in-dataset encoding, etc.
