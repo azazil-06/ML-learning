@@ -31,6 +31,8 @@ model.add(Dense(1))
 
 model.compile(optimizer="adam",loss="mse")
 model.fit(x_train,y_train,epochs=100)
+
+
 joblib.dump(model,"Ai_model.pkl")
 
 print("Code executed")
