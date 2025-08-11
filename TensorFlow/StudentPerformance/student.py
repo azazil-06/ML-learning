@@ -8,21 +8,19 @@ from sklearn.metrics import r2_score,mean_squared_error
 import math 
 
 
-mydata=pd.read_csv("scenario_9_music_100k.csv")
+mydata=pd.read_csv("scenario_6_student_perf_100k.csv")
 
-gender_le = LabelEncoder()
-genre_le = LabelEncoder()
-song_le = LabelEncoder()
+grade_le = LabelEncoder()
 
-mydata["gen_encoded"] = gender_le.fit_transform(mydata[["Gender"]])
-mydata["genre_encoded"] = genre_le.fit_transform(mydata[["Genre_Pref"]])
-mydata["song_encoded"] = song_le.fit_transform(mydata[["Song_Category"]])
+
+mydata["grade_encoded"] = grade_le.fit_transform(mydata[["Grade"]])
 
 
 
 
-x=mydata[["Age","gen_encoded","genre_encoded","Listening_Hours"]]     
-y=mydata[["song_encoded"]]
+
+x=mydata[["Study_Hours","Attendance","Sleep_Hours","Internet_Use_Hrs"]]     
+y=mydata[["grade_encoded"]]
 
 
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
@@ -35,7 +33,7 @@ model.add(Dense(10,activation="relu"))
 model.add(Dense(1))
 
 model.compile(optimizer="adam",loss="mse")
-model.fit(x_train,y_train,epochs=100)
+model.fit(x,y,epochs=100)
 
 y_pred = model.predict(x_test)
 print("mse= ", mean_squared_error(y_test,y_pred))
@@ -43,7 +41,7 @@ print("rmse= ",math.sqrt(mean_squared_error(y_test,y_pred)))
 print("r2 score= ",r2_score(y_test,y_pred))
 
 
-joblib.dump(model,"music_model.pkl")
+joblib.dump(model,"student_model.pkl")
 
 print("Code executed")
 print(mydata)

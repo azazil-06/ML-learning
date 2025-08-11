@@ -188,9 +188,23 @@ print(y)
 
 #---------------------------------------------------------------------------------
 
+#----------------------------TensorFlow-------------------------------------------
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 
 
 
+x=mydata[["Age","gender_encoded","body_encoded","Height"]]   
 
 
-#                     :)jimbru
+model.add(Dense(10,activation="relu",input_shape=(4,))) # input layer (mandekk 4 input vannond passing 4)
+model.add(Dense(10,activation="relu"))  #neural layer 1
+model.add(Dense(10,activation="relu"))  #neural layer 2
+model.add(Dense(1)) #output layer
+
+model.compile(optimizer="adam",loss="mse") #error calculation
+model.fit(x_train,y_train,epochs=100) #no of iterations
+
+#------------------------------------------------------------------------------------------------------
+#                                   :)jimbru

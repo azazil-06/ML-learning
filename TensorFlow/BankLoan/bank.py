@@ -1,28 +1,22 @@
 import pandas as pd
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
-from sklearn.preprocessing import LabelEncoder
+
 from sklearn.model_selection import train_test_split
 import joblib
 from sklearn.metrics import r2_score,mean_squared_error
 import math 
 
 
-mydata=pd.read_csv("scenario_9_music_100k.csv")
-
-gender_le = LabelEncoder()
-genre_le = LabelEncoder()
-song_le = LabelEncoder()
-
-mydata["gen_encoded"] = gender_le.fit_transform(mydata[["Gender"]])
-mydata["genre_encoded"] = genre_le.fit_transform(mydata[["Genre_Pref"]])
-mydata["song_encoded"] = song_le.fit_transform(mydata[["Song_Category"]])
+mydata=pd.read_csv("scenario_8_bank_loans_100k.csv")
 
 
 
 
-x=mydata[["Age","gen_encoded","genre_encoded","Listening_Hours"]]     
-y=mydata[["song_encoded"]]
+
+
+x=mydata[["Age","Income","Credit_Score","Loan_Amount"]]     
+y=mydata[["Approved"]]
 
 
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
@@ -43,7 +37,6 @@ print("rmse= ",math.sqrt(mean_squared_error(y_test,y_pred)))
 print("r2 score= ",r2_score(y_test,y_pred))
 
 
-joblib.dump(model,"music_model.pkl")
+joblib.dump(model,"bank_model.pkl")
 
 print("Code executed")
-print(mydata)
